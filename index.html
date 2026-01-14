@@ -1,7 +1,432 @@
 ---
 layout: default
 ---
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name | Data & Business Analyst Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name — data analytics, BI dashboards, finance/FinTech analysis, and customer segmentation projects." />
+
+  <!-- Open Graph (LinkedIn preview) -->
+  <meta property="og:title" content="Your Name | Data & Business Analyst Portfolio" />
+  <meta property="og:description" content="Dashboards, analytics projects, and case studies in FinTech and marketing analytics." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#111a2e;
+      --text:#e8eefc;
+      --muted:#b6c3e6;
+      --line:rgba(255,255,255,.10);
+      --accent:#7aa7ff;
+      --accent2:#7dffcf;
+      --shadow: 0 18px 50px rgba(0,0,0,.40);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 10% 10%, rgba(122,167,255,.25), transparent 55%),
+        radial-gradient(900px 600px at 90% 15%, rgba(125,255,207,.18), transparent 50%),
+        linear-gradient(180deg, #070b14, var(--bg));
+      line-height:1.55;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:28px 18px 80px}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 20px rgba(122,167,255,.45);
+    }
+    .nav-links{display:flex; gap:16px; flex-wrap:wrap; justify-content:flex-end}
+    .nav-links a{
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .nav-links a:hover{
+      color:var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,.04);
+    }
+
+    .hero{
+      padding:46px 0 18px;
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+    }
+    .card{
+      background: rgba(17,26,46,.72);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-main{padding:28px}
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+      background: rgba(255,255,255,.03);
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size:44px;
+      line-height:1.06;
+      letter-spacing:-.7px;
+    }
+    @media(max-width:520px){ h1{font-size:36px} }
+    .sub{
+      color:var(--muted);
+      font-size:16px;
+      max-width: 70ch;
+      margin:0 0 18px;
+    }
+    .cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius: 12px;
+      border:1px solid var(--line);
+      font-weight:800;
+      font-size:14px;
+      background: rgba(255,255,255,.04);
+    }
+    .btn:hover{transform: translateY(-1px); transition:.15s ease}
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#0b1220;
+    }
+    .meta{
+      margin-top:16px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .pill{
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .hero-side{padding:22px}
+    .side-title{font-weight:900; margin:0 0 10px}
+    .side-list{margin:0; padding:0; list-style:none; display:grid; gap:10px}
+    .side-list li{
+      padding:12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background: rgba(255,255,255,.03);
+    }
+    .side-list .label{display:block; color:var(--muted); font-size:12px; font-weight:800}
+    .side-list .value{font-weight:800; margin-top:2px}
+
+    section{margin-top:18px}
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:14px;
+      margin: 18px 0 10px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size:22px;
+      letter-spacing:-.2px;
+    }
+    .section-head p{margin:0; color:var(--muted); font-size:14px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr 1fr} }
+    @media (max-width: 620px){ .grid{grid-template-columns:1fr} }
+
+    .proj{padding:16px}
+    .proj h3{margin:6px 0 6px; font-size:16px}
+    .proj p{margin:0 0 10px; color:var(--muted); font-size:14px}
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .tag{
+      font-size:12px;
+      font-weight:800;
+      color: var(--muted);
+      padding:6px 9px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+    }
+    .links{display:flex; gap:10px; margin-top:12px; flex-wrap:wrap}
+    .mini{
+      font-size:13px;
+      font-weight:900;
+      padding:9px 10px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+    }
+    @media(max-width:900px){ .two-col{grid-template-columns:1fr} }
+    .about, .skills{padding:18px}
+    .about p{margin:0; color:var(--muted)}
+    .skills ul{margin:0; padding-left:18px; color:var(--muted)}
+    .skills li{margin:6px 0}
+
+    .footer{
+      margin-top:20px;
+      padding:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+      max-width: var(--max);
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .sep{opacity:.7}
+  </style>
+</head>
+
 <body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Your Name</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card hero-main">
+        <div class="kicker">📊 Data • BI • FinTech • Customer Analytics</div>
+        <h1>Data & Business Analyst building dashboards and insights that drive decisions.</h1>
+        <p class="sub">
+          I turn messy data into clear stories using <strong>Python, SQL, Power BI, and Tableau</strong>.
+          Recent work includes a <strong>SoFi 10-K analytics dashboard</strong> and <strong>Starbucks offer segmentation</strong>.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.linkedin.com%2Fin%2FYOUR-LINKEDIN&data=05%7C02%7Cvkhatri%40umass.edu%7C4ebb74308fab4b9c50a408de53492a33%7C7bd08b0b33954dc194bbd0b2e56a497f%7C0%7C0%7C639039770875622580%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=wiZBtJzNckcdgd9DVK6X7LHMFuJ7XLsd%2BoFQm3pQFcQ%3D&reserved=0" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2FYOUR-GITHUB&data=05%7C02%7Cvkhatri%40umass.edu%7C4ebb74308fab4b9c50a408de53492a33%7C7bd08b0b33954dc194bbd0b2e56a497f%7C0%7C0%7C639039770875646107%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=yVfsrX9b2bqf2XReuQ5j5NfP0UvwJwV6lzaEZ7FZagc%3D&reserved=0" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="YOUR_RESUME_LINK.pdf" target="_blank" rel="noreferrer">Resume</a>
+        </div>
+
+        <div class="meta">
+          <span class="pill">📍 Location: Massachusetts / Remote</span>
+          <span class="pill">🎯 Target roles: Business Analyst • Data Analyst • Finance Analyst</span>
+          <span class="pill">✅ Strengths: KPI design • Data modeling • Storytelling</span>
+        </div>
+      </div>
+
+      <aside class="card hero-side">
+        <p class="side-title">Highlights</p>
+        <ul class="side-list">
+          <li>
+            <span class="label">Core tools</span>
+            <span class="value">Python • SQL • Power BI • Tableau • Excel</span>
+          </li>
+          <li>
+            <span class="label">Analytics</span>
+            <span class="value">Segmentation • Funnel • Cohorts • Forecasting</span>
+          </li>
+          <li>
+            <span class="label">Focus</span>
+            <span class="value">FinTech + B2C growth</span>
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-head">
+        <h2>Featured Projects</h2>
+        <p>Short, recruiter-friendly summaries + links.</p>
+      </div>
+
+      <div class="grid">
+        <!-- Project 1 -->
+        <article class="card proj">
+          <div class="kicker">FinTech • SEC EDGAR • BI</div>
+          <h3>SoFi 10-K Analytics Dashboard (Tech-first vs Lending-led)</h3>
+          <p>
+            Built a dataset from SEC filings and created KPI views for segment revenue mix, efficiency ratio,
+            and product/member trends to evaluate operating model strategy.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">SEC API</span><span class="tag">Power BI</span><span class="tag">Data Modeling</span>
+          </div>
+          <div class="links">
+            <a class="mini" href="YOUR_DASHBOARD_LINK" target="_blank" rel="noreferrer">Live Dashboard</a>
+            <a class="mini" href="YOUR_REPO_LINK" target="_blank" rel="noreferrer">GitHub Repo</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card proj">
+          <div class="kicker">Marketing • Segmentation • ML</div>
+          <h3>Starbucks Offers: Customer Segmentation + Response Insights</h3>
+          <p>
+            Cleaned and merged profile/transaction/offer data, engineered features, and used K-Means to identify
+            customer segments to inform targeting and offer strategy.
+          </p>
+          <div class="tags">
+            <span class="tag">Pandas</span><span class="tag">scikit-learn</span><span class="tag">K-Means</span><span class="tag">Feature Engineering</span>
+          </div>
+          <div class="links">
+            <a class="mini" href="YOUR_NOTEBOOK_LINK" target="_blank" rel="noreferrer">Notebook</a>
+            <a class="mini" href="YOUR_REPO_LINK_2" target="_blank" rel="noreferrer">GitHub Repo</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card proj">
+          <div class="kicker">Sales Ops • Salesforce • Tableau</div>
+          <h3>Salesforce Analytics (Tableau + AgentForce)</h3>
+          <p>
+            Designed reporting views for sales forecasting and agent performance monitoring, integrating dashboard
+            KPIs with business questions to improve pipeline visibility.
+          </p>
+          <div class="tags">
+            <span class="tag">Salesforce</span><span class="tag">Tableau</span><span class="tag">Forecasting</span><span class="tag">KPI Design</span>
+          </div>
+          <div class="links">
+            <a class="mini" href="YOUR_CASE_STUDY_LINK" target="_blank" rel="noreferrer">Case Study</a>
+            <a class="mini" href="YOUR_REPO_LINK_3" target="_blank" rel="noreferrer">GitHub Repo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT + SKILLS -->
+    <section class="two-col">
+      <article class="card about" id="about">
+        <div class="section-head">
+          <h2>About</h2>
+          <p>Who I am and how I work</p>
+        </div>
+        <p>
+          I’m a data/business analyst who enjoys translating ambiguous business questions into measurable KPIs,
+          clean datasets, and executive-ready dashboards. I’m especially interested in <strong>FinTech</strong>,
+          <strong>B2C growth</strong>, and <strong>product analytics</strong>.
+          <br><br>
+          I work end-to-end: requirements → data extraction/cleaning → modeling → dashboard storytelling.
+        </p>
+      </article>
+
+      <aside class="card skills" id="skills">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <p>ATS-friendly keywords</p>
+        </div>
+        <ul>
+          <li><strong>Analytics:</strong> KPI design, segmentation, funnel analysis, cohort analysis, forecasting</li>
+          <li><strong>Data:</strong> Python (pandas), SQL, Excel, data cleaning, feature engineering</li>
+          <li><strong>BI:</strong> Power BI (DAX), Tableau, dashboard design, data storytelling</li>
+          <li><strong>Tools:</strong> Git/GitHub, Jupyter, APIs (SEC EDGAR), documentation</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Make it easy for recruiters</p>
+      </div>
+      <div class="card" style="padding:18px">
+        <p style="margin:0; color:var(--muted)">
+          Email: <a href="mailto:YOUR_EMAIL" style="font-weight:900; color:var(--text)">YOUR_EMAIL</a><br>
+          LinkedIn: <a href="https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.linkedin.com%2Fin%2FYOUR-LINKEDIN&data=05%7C02%7Cvkhatri%40umass.edu%7C4ebb74308fab4b9c50a408de53492a33%7C7bd08b0b33954dc194bbd0b2e56a497f%7C0%7C0%7C639039770875663108%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=R1zcEp0bRwXE6Fu1GbkOHH4Can0cZ3hE68Fh0jycicg%3D&reserved=0" target="_blank" rel="noreferrer" style="font-weight:900">/in/YOUR-LINKEDIN</a><br>
+          GitHub: <a href="https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2FYOUR-GITHUB&data=05%7C02%7Cvkhatri%40umass.edu%7C4ebb74308fab4b9c50a408de53492a33%7C7bd08b0b33954dc194bbd0b2e56a497f%7C0%7C0%7C639039770875680266%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=A5QUhLUypugXYo10QBpglr5bqNfSXN2HwyXoptmFhLQ%3D&reserved=0" target="_blank" rel="noreferrer" style="font-weight:900">@YOUR-GITHUB</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="y"></span> Your Name • Built with HTML/CSS • Hosted on GitHub Pages</span>
+    <span class="sep">Tip: Add a resume PDF + a screenshot thumbnail for each project</span>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+<!--<body>
 <header>
   <p>Business & Data Analyst</p>
   <nav>
@@ -82,3 +507,4 @@ layout: default
 </footer>
 
 </body>
+
