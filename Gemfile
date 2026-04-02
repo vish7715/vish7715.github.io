@@ -1,3 +1,3 @@
-source "https://rubygems.org"
-gem "jekyll", "~> 4.3"
-gem "webrick"
+# Gemfile
+gem "jekyll", "~> 4.4"
+gem "jekyll-theme-midnight"
