@@ -1,3 +1,4 @@
 [build]
   command = "bundle exec jekyll build"
   publish = "_site"
+  echo = "No build step"
