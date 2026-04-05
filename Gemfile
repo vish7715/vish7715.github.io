@@ -1,3 +1,2 @@
-# Gemfile
-gem "jekyll", "~> 4.3"
-gem "jekyll-theme-midnight"
+source "https://rubygems.org"
+gem 'github-pages'
